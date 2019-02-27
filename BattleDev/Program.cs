@@ -23,9 +23,9 @@ namespace BattleDev
           Un entier représentant le montant des ventes du restaurant arrondi à l'entier supérieur.
        * */
       string line;
-      int line1; // prix du buffet par personne
+      int line1 = 0; // prix du buffet par personne
       int line2 = 2; // nombre de table servies
-      int[] line3 = new int[51]; // le nombre de personne par table
+      int[] line3 = new int[52]; // le nombre de personne par table
       int montantVente = 0;
       for (int i = 0; i < 52; i++)
       {
@@ -63,10 +63,25 @@ namespace BattleDev
       {
         if (line3[i] != 0)
         {
-          
+          int remise = 1;
+          if (line3[i] >= 10)
+          {
+            remise = 30;
+          }
+          else if (line3[i] >= 6)
+          {
+            remise = 20;
+          }
+          else if (line3[i] >= 4)
+          {
+            remise = 10;
+          }
+
+          montantVente += (line1 * line3[i]) * remise / 100;
         }
       }
 
+      Console.WriteLine($"le montant total est : {montantVente}");
       Console.WriteLine("Press any key to exit:");
       Console.ReadKey();
       // Vous pouvez aussi effectuer votre traitement ici après avoir lu toutes les données 
