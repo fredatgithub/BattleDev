@@ -13,16 +13,12 @@ namespace BattleDev
        *  - 10% sur la note pour les groupes d'au moins 4 personnes
           - 20% sur la note pour les groupes d'au moins 6 personnes
           - 30% sur la note pour les groupes d'au moins 10 personnes
-
           Pour votre business plan, vous souhaitez estimer le montant des ventes en fonction du prix par personne et de la configuration des tables servies.
-          
           Format des données
-
           Entrée
           Ligne 1 : un entier compris entre 20 et 40 correspondant au prix du buffet par personne.
           Ligne 2 : un entier N compris entre 5 et 50 correspondant au nombre de tables servies.
           Lignes 3 à N+2 : un entier compris entre 2 et 15 représentant le nombre de personnes présentes à une table.
-
           Sortie
           Un entier représentant le montant des ventes du restaurant arrondi à l'entier supérieur.
        * */
@@ -60,6 +56,14 @@ namespace BattleDev
           {
             break;
           }
+        }
+      }
+
+      for (int i = 3; i <= line2; i++)
+      {
+        if (line3[i] != 0)
+        {
+          
         }
       }
 
